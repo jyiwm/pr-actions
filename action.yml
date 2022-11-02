@@ -1,6 +1,13 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
+  jira-account: 
+    description: 'Jira account name. E.g. statmilk'
+    required: true
+    default: 'statmilk'
+  ticket-regex:
+    description: 'Regex for pulling out ticket number from branch'
+    required: true
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
@@ -10,4 +17,4 @@ outputs:
     description: 'The time we greeted you'
 runs:
   using: 'node16'
-  main: 'index.js'
+  main: 'dist/index.js'
