@@ -7,10 +7,10 @@ try {
   const nameToGreet = core.getInput('who-to-greet');
   const jiraAccount = core.getInput('jira-account');
   const ticketRegex = new RegExp(core.getInput('ticket-regex') || '[A-Z]+-\\d+');
-  const headBranch = context.payload.pull_request.head.ref;
-  const [ticketId] = headBranch.match(ticketRegex) || [];
+  // const headBranch = context.payload.pull_request.head.ref;
+  // const [ticketId] = headBranch.match(ticketRegex) || [];
 
-  const url = `https://${jiraAccount}.atlassian.net/browse/${ticketId}`;
+  // const url = `https://${jiraAccount}.atlassian.net/browse/${ticketId}`;
 
   console.log(`Hello ${nameToGreet}!`);
   const time = (new Date()).toTimeString();
