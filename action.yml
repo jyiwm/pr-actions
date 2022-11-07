@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'PR Actions'
+description: 'Update title and add JIRA link to PRs'
 inputs:
   jira-account: 
     description: 'Jira account name. E.g. statmilk'
@@ -7,14 +7,9 @@ inputs:
     default: 'statmilk'
   ticket-regex:
     description: 'Regex for pulling out ticket number from branch'
+  github-token:
+    description: 'Token for making updates to PR'
     required: true
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node16'
   main: 'dist/index.js'
